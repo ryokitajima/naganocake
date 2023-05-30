@@ -1,5 +1,8 @@
 # README
 
+複数制限のdevise使用は、public・admin共にコントローラー作成まで実施
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

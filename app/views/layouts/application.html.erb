@@ -2,15 +2,24 @@
 <html>
   <head>
     <title>Naganocake</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header>
+      <a href="/">ながのCAKE</a>
+      <ul>
+        <li><%= link_to "About", "/about" %></li>
+        <li>商品一覧</li>
+        <li>新規登録</li>
+        <li>ログイン</li>
+      </ul>
+    </header>
     <%= yield %>
   </body>
 </html>
