@@ -10,15 +10,25 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <header>
-      <a href="/">ながのCAKE</a>
-      <ul>
-        <li><%= link_to "About", "/about" %></li>
-        <li>商品一覧</li>
-        <li>新規登録</li>
-        <li>ログイン</li>
-      </ul>
+  <body class="d-flex flex-column vh-100">
+    <header class="shadow-sm">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    	  <div class="container">
+		      <a class="navbar-brand" href="/">ながのCAKE</a>
+		      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			     <span class="navbar-toggler-icon"></span>
+		      </button>
+		      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			      <div class="navbar-nav ml-auto">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item text-white"><%= link_to "About", "/about" %></li>
+                <li class="nav-item text-white ml-3">商品一覧</li>
+                <li class="nav-item text-white ml-3">新規登録</li>
+                <li class="nav-item text-white ml-3">ログイン</li>
+              </ul>
+            </div>
+          </div>
+         </div>
     </header>
     <%= yield %>
   </body>
