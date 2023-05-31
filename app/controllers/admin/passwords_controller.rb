@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class Admin::PasswordsController < Devise::PasswordsController
+  def after_sign_in_path_for(resource)
+    admin_path
+  end
   # GET /resource/password/new
   # def new
   #   super

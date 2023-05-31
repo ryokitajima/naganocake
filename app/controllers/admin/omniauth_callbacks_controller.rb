@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class Admin::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  def after_sign_in_path_for(resource)
+    admin_path
+  end
   # You should configure your model like this:
   # devise :omniauthable, omniauth_providers: [:twitter]
 

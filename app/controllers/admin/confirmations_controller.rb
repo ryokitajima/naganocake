@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class Admin::ConfirmationsController < Devise::ConfirmationsController
+  def after_sign_in_path_for(resource)
+    admin_path
+  end
   # GET /resource/confirmation/new
   # def new
   #   super
