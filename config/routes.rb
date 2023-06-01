@@ -17,5 +17,9 @@ Rails.application.routes.draw do
   get "/about" => "public/homes#about"
   get "/admin" => "admin/homes#top"
   
-  
+  namespace :public do
+  get "/customers/unsubscribe" => "customers#unsubscribe"
+  patch "/customers/withdrawal" => "customers#withdrawal"
+  resources :customers
+  end
 end

@@ -1,6 +1,10 @@
 # README
 
-複数制限のdevise使用は、public・admin共にコントローラー作成まで実施
+#メモ
+退会ページまで作成。
+退会ページで退会するボタンを押すと
+ActiveRecord::RecordNotFound in Public::CustomersController#withdrawal Couldn't find Customer without an ID
+のエラーが発生中。
 
 
 This README would normally document whatever steps are necessary to get the
