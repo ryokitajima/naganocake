@@ -21,5 +21,10 @@ Rails.application.routes.draw do
   get "/customers/unsubscribe" => "customers#unsubscribe"
   patch "/customers/withdrawal" => "customers#withdrawal"
   resources :customers
+  resources :items
+  end
+  
+  namespace :admin do
+  resources :items
   end
 end

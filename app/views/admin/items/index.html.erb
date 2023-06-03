@@ -1,0 +1,23 @@
+<h4>商品一覧</h4>
+
+<div>
+  <table border="1">
+    <thead>
+      <tr>
+        <th class="header1">商品ID</th>
+        <th class="header2">商品名</th>
+        <th class="header3">税抜価格</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @items.each do |item| %>
+      <tr>
+        <td><%= item.id %></td>
+        <td><%= link_to item.name, admin_item_path(item.id) %></td>
+        <td><%= item.price %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<%= paginate @items %>

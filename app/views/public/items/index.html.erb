@@ -1,0 +1,23 @@
+<h4>商品一覧</h4>
+  
+  <% @items.each do |item| %>
+<table>
+  <thead>
+    <tr>
+    <td>
+      <%= link_to public_item_path(item.id) do %>
+      <%= image_tag item.image %>
+      <% end %>
+    </td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+     <td><%= link_to item.name, public_item_path(item.id) %></td>
+  </tr>
+  <tr>
+    <td>¥<%= item.price %></td>
+  </tr>
+  </tbody>
+</table>
+  <% end %>

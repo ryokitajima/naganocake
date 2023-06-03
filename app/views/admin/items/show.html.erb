@@ -1,0 +1,21 @@
+<h4>商品詳細</h4>
+
+<div>
+ <%= image_tag @item.get_image %>
+</div>
+<div>
+ <table>
+    <tr>
+        <th>商品名</th><td><%= @item.name %></td>     
+    </tr>
+    <tr>
+        <th>商品説明</th><td><%= @item.introduction %></td>    
+    </tr>
+    <tr>
+        <th>税込価格</br>(税抜価格)</th><td><%= @item.add_tax_price.to_s(:dalimited) %> (<%= @item.price %>)円</td>
+    </tr>
+ </table>
+</div>
+<div>
+    <%= link_to "編集する", edit_admin_item_path(@item.id) %>
+</div>
