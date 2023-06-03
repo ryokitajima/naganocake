@@ -5,5 +5,5 @@
 <p>退会する場合は、「退会する」をクリックしてください。</p>
 
 <%= link_to "退会しない", public_customer_path(current_customer), class:"btn btn-outline-secondary btn-block" %>
-<%= link_to "退会する" , public_customers_withdrawal_path(current_customer), method: :patch, class:"btn btn-outline-secondary btn-block" %>
+<%= link_to "退会する" , public_customers_withdrawal_path, method: :patch, class:"btn btn-outline-secondary btn-block" %>
 
