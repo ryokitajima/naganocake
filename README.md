@@ -2,7 +2,7 @@
 
 #メモ
 ##退会しても一度使用したメールアドレスのデータが残っており、再度使用不可となっている
-##管理者側・顧客側の動的ヘッダーの作成方法が
+##管理者側・顧客側の動的ヘッダーの作成方法がわからない
 
 
 This README would normally document whatever steps are necessary to get the

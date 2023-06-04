@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   patch "/customers/withdrawal" => "customers#withdrawal"
   resources :customers
   resources :items
+  resources :cart_items
   end
   
   namespace :admin do
@@ -29,3 +30,4 @@ Rails.application.routes.draw do
   resources :customers
   end
 end
+
