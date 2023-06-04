@@ -2,7 +2,7 @@
 
 #メモ
 ##退会しても一度使用したメールアドレスのデータが残っており、再度使用不可となっている
-##管理者側の顧客編集画面で会員ステータスを変更する方法が分からない
+##管理者側・顧客側の動的ヘッダーの作成方法が
 
 
 This README would normally document whatever steps are necessary to get the
