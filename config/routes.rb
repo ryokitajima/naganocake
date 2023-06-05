@@ -22,7 +22,11 @@ Rails.application.routes.draw do
   patch "/customers/withdrawal" => "customers#withdrawal"
   resources :customers
   resources :items
-  resources :cart_items
+    resources :cart_items do
+      collection do
+       delete 'destroy_all', action: 'destroy_all'
+      end
+    end
   end
   
   namespace :admin do

@@ -1,6 +1,6 @@
 class CartItem < ApplicationRecord
   has_one_attached :image
-  belongs_to :product
+  belongs_to :item
   belongs_to :customer
   
   def get_image
@@ -10,4 +10,9 @@ class CartItem < ApplicationRecord
     end
     image
   end
+  
+  def subtotal
+    item.add_tax_price * amount
+  end
+  
 end
