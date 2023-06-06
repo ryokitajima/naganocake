@@ -27,6 +27,8 @@ Rails.application.routes.draw do
        delete 'destroy_all', action: 'destroy_all'
       end
     end
+  resources :orders
+  post "/orders/confirm" => "orders#confirm"
   end
   
   namespace :admin do

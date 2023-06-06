@@ -6,7 +6,9 @@
 ##顧客側の商品詳細ページでカートに入れるボタンをクリックする際、一度リロードしないとクリックできない
 ##カート内編集機能が分からない
 
-@item = Item.find(cart_item_params[:item_id])
+
+##update
+    @item = Item.find(params[:id])
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
