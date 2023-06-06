@@ -4,8 +4,9 @@
 ##退会しても一度使用したメールアドレスのデータが残っており、再度使用不可となっている
 ##管理者側・顧客側の動的ヘッダーの作成方法がわからない
 ##顧客側の商品詳細ページでカートに入れるボタンをクリックする際、一度リロードしないとクリックできない
-##同一商品が存在する場合の処理が分からない
 ##カート内編集機能が分からない
+
+@item = Item.find(cart_item_params[:item_id])
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
