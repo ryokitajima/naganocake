@@ -18,6 +18,27 @@
       <tr>
         <td><strong>お届け先</strong></td>
       </tr>
+      <tr>
+        <td>
+            <%= f.radio_button :address, @customer.address %>
+            <%= f.label :payment_method_address, "ご自身の住所" %>
+        </td>
+        <tr>
+          <td>
+            〒<%= @customer.postal_code %>  <%= @customer.address %> </td>
+        </tr>
+        <tr>
+          <td><%= @customer.last_name %><%= @customer.first_name %></td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.radio_button :address, @customer.address %>
+            <%= f.label :payment_method_address, "ご自身の住所" %>
+          </td>
+        </tr>
+        <tr>
+          
+        </tr>
     <% end %>
   </table>
   
