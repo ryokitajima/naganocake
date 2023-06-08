@@ -5,7 +5,7 @@
   <thead>
     <tr>
     <td>
-      <%= link_to public_item_path(item.id) do %>
+      <%= link_to item_path(item.id) do %>
       <%= image_tag item.image %>
       <% end %>
     </td>
@@ -13,7 +13,7 @@
   </thead>
   <tbody>
   <tr>
-     <td><%= link_to item.name, public_item_path(item.id) %></td>
+     <td><%= link_to item.name, item_path(item.id) %></td>
   </tr>
   <tr>
     <td>¥<%= item.price %></td>

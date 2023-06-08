@@ -2,7 +2,7 @@
 <div>
   <table>
     <tr><strong>支払方法</strong></tr>
-    <%= form_with model: @order, url: public_orders_confirm_path do |f| %>
+    <%= form_with model: @order, url: confirm_orders_path do |f| %>
       <tr>
         <td>
           <%= f.radio_button :payment_method, Order.payment_methods.key(0) %>
@@ -18,28 +18,21 @@
       <tr>
         <td><strong>お届け先</strong></td>
       </tr>
-      <tr>
-        <td>
-            <%= f.radio_button :address, @customer.address %>
-            <%= f.label :payment_method_address, "ご自身の住所" %>
-        </td>
         <tr>
-          <td>
-            〒<%= @customer.postal_code %>  <%= @customer.address %> </td>
+          <td>郵便番号(ハイフンなし)</td><td><%= f.text_field :postal_code %></td>
         </tr>
         <tr>
-          <td><%= @customer.last_name %><%= @customer.first_name %></td>
+          <td>住所</td><td><%= f.text_field :address %></td>
         </tr>
         <tr>
-          <td>
-            <%= f.radio_button :address, @customer.address %>
-            <%= f.label :payment_method_address, "ご自身の住所" %>
-          </td>
+          <td>宛名</td><td><%= f.text_field :name %></td>
         </tr>
         <tr>
-          
+          <td><%= f.submit "確認画面へ進む" %></td>
         </tr>
+         <%= f.hidden_field :payment, :value => @total.round.to_s(:delimited) %>
     <% end %>
   </table>
-  
+
+
 </div>

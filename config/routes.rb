@@ -5,19 +5,19 @@ Rails.application.routes.draw do
   registrations: "public/registrations",
   sessions: 'public/sessions'
   }
-  
+
   # 管理者用
   # URL /admin/sign_in ...
   devise_for :admin, skip: [:registrations, :passwords] , controllers: {
   sessions: "admin/sessions"
   }
-  
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: "public/homes#top"
   get "/about" => "public/homes#about"
   get "/admin" => "admin/homes#top"
-  
-  namespace :public do
+
+  scope module: :public do
   get "/customers/unsubscribe" => "customers#unsubscribe"
   patch "/customers/withdrawal" => "customers#withdrawal"
   resources :customers
@@ -27,10 +27,13 @@ Rails.application.routes.draw do
        delete 'destroy_all', action: 'destroy_all'
       end
     end
-  resources :orders
-  post "/orders/confirm" => "orders#confirm"
+  resources :orders do
+    collection do
+      post "confirm"
+    end
   end
-  
+  end
+
   namespace :admin do
   resources :items
   resources :customers

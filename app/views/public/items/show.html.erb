@@ -14,7 +14,7 @@
   <tr>
     <th>数量を選択してください</th>
     <% if customer_signed_in? %>
-    <%= form_with model: @cart_item, url: public_cart_items_path , method: :post do |f| %>
+    <%= form_with model: @cart_item, url: cart_items_path , method: :post do |f| %>
     <td><%= f.hidden_field :item_id, :value => @item.id %></td>
     <td><%= f.select :amount , *[1..10] %></td>
     <td><%= f.submit 'カートに入れる', class: "btn-sm btn-primary" %></td>
