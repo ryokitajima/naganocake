@@ -1,0 +1,30 @@
+<h4>注文履歴一覧</h4>
+
+<div>
+  <table border="1">
+    <thead>
+    <tr>
+      <th>注文日</th>
+      <th>配送先</th>
+      <th>注文商品</th>
+      <th>支払い金額</th>
+      <th>注文詳細</th>
+    </tr>
+    </thead>
+    <% @orders.each do |order| %>
+    <tbody>
+      <tr>
+        <td><%= order.created_at.strftime('%Y/%m/%d') %></td>
+        <td><%= order.address %></td>
+        <td>
+          <% order.order_items.each do |order_item| %>
+          <%= order_item.item.name %>
+          <% end %>
+          </td>
+        <td><%= order.payment %></td>
+        <td><%= link_to "表示する", order_path(order.id),class: "btn btn-outline-secondary btn-block" %></td>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
+</div>
