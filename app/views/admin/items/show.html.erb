@@ -1,10 +1,12 @@
-<h4>商品詳細</h4>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-9">
+      <h4 class="p-3 mb-2 bg-light text-dark">商品詳細</h4>
 
-<div>
+<div class= "row">
  <%= image_tag @item.get_image %>
-</div>
-<div>
- <table>
+ <table class="col">
     <tr>
         <th>商品名</th><td><%= @item.name %></td>     
     </tr>
@@ -16,6 +18,7 @@
     </tr>
  </table>
 </div>
-<div>
-    <%= link_to "編集する", edit_admin_item_path(@item.id) %>
+    <%= link_to "編集する", edit_admin_item_path(@item.id), class: "btn btn-success btn-sm" %>
+</div>
+</div>
 </div>

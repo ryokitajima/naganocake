@@ -1,7 +1,12 @@
-<h4>商品一覧</h4>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-9">
+      <h4 class="p-3 mb-2 bg-light text-dark">商品一覧</h4>
   
   <% @items.each do |item| %>
-<table>
+  <div class="row" style="width: 18rem;">
+  <table class="col">
   <thead>
     <tr>
     <td>
@@ -22,3 +27,4 @@
 </table>
 <%= paginate @items %>
   <% end %>
+</div>

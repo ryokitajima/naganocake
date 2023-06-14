@@ -1,4 +1,8 @@
-<h4>商品編集</h4>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-9">
+      <h4 class="p-3 mb-2 bg-light text-dark">商品編集</h4>
 <%= form_with model: @item, url: admin_item_path(@item.id), method: :patch do |f| %>
 
  <table>
@@ -15,6 +19,6 @@
      <th>税抜価格</th><td><%= f.text_field :price %>円</td>
    </tr>
  </table>
- <%= f.submit "変更を保存" %>
+ <%= f.submit "変更を保存", class: "btn btn-success btn-sm" %>
  <% end %>
  

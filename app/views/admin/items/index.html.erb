@@ -1,8 +1,16 @@
-<h4>商品一覧</h4>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-9">
+      <div class="row justify-content-between">
+      <h4 class="p-3 mb-2 bg-light text-dark">商品一覧</h4>
+      <div class="col-2 align-self-end" ><%= link_to "＋", new_admin_item_path, class: "btn btn-light btn-sm"%></div>
+      </div>
 
-<div>
-  <table border="1">
-    <thead>
+
+
+  <table class="table order-table">
+    <thead class="table-secondary">
       <tr>
         <th class="header1">商品ID</th>
         <th class="header2">商品名</th>
@@ -19,5 +27,8 @@
       <% end %>
     </tbody>
   </table>
+  <%= paginate @items %>
 </div>
-<%= paginate @items %>
+</div>
+</div>
+

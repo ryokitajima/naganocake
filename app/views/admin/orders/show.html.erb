@@ -1,4 +1,8 @@
-<h4>注文履歴詳細</h4>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-9">
+      <h4 class="p-3 mb-2 bg-light text-dark">注文履歴詳細</h4>
 <div>
   <table>
     <tr>
@@ -16,9 +20,10 @@
   </table>
 </div>
 
-<div>
-  <table border ="1">
-    <thead>
+<div class="row">
+  <div class="col">
+  <table class="table order-table">
+    <thead class="table-secondary">
       <tr>
         <th>商品名</th>
         <th>単価（税込）</th>
@@ -37,9 +42,8 @@
     </tbody>
     <% end %>
   </table>
-</div>
-
-<div>
+  </div>
+  <div class="col align-self-end">
   <table>
     <tr>
       <th>商品合計</th><td><%= (@order.payment.to_i - @order.postage.to_i).to_s(:delimited)  %></td>
@@ -51,4 +55,8 @@
       <th>請求金額合計</th><td><%= @order.payment %></td>
     </tr>
   </table>
+  </div>
+</div>
+</div>
+</div>
 </div>

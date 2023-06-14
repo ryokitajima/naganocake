@@ -1,12 +1,15 @@
-<h4>会員一覧</h4>
-<div>
-  <table border="1" >
-    <thead>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-9">
+      <h4 class="p-3 mb-2 bg-light text-dark">会員一覧</h4>
+  <table class="table order-table">
+    <thead class="table-secondary">
       <tr>
-        <th class="header1">会員ID</th>
-        <th class="header2">氏名</th>
-        <th class="header3">メールアドレス</th>
-        <th class="header4">ステータス</th>
+        <th class="active col-xs-4">会員ID</th>
+        <th class="active col-xs-4">氏名</th>
+        <th class="active col-xs-4">メールアドレス</th>
+        <th class="active col-xs-4">ステータス</th>
       </tr>
     </thead>
     <tbody>
@@ -25,4 +28,6 @@
     </tbody>
   </table>
   <%= paginate @customers %>
+</div>
+</div>
 </div>

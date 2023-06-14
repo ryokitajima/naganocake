@@ -2,12 +2,8 @@
 
 #メモ
 ##退会しても一度使用したメールアドレスのデータが残っており、再度使用不可となっている
-##管理者側・顧客側の動的ヘッダーの作成方法がわからない
 ##顧客側の商品詳細ページでカートに入れるボタンをクリックする際、一度リロードしないとクリックできない
-
-
-##update
-    @item = Item.find(params[:id])
+##画像の大きさ自動変更のやり方確認
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
