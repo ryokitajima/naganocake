@@ -9,8 +9,8 @@
 </div>
 
 <div>
-  <table border="1">
-    <thead>
+  <table class="table table-bordered">
+    <thead class="table-secondary">
       <tr>
         <th class="header1">商品名</th>
         <th class="header2">単価（税込）</th>
@@ -26,11 +26,11 @@
           <td>
             <%= form_with model: cart_item, url: cart_item_path(cart_item.id), method: :patch do |f| %>
             <%= f.select :amount , *[1..10] %>
-            <%= f.submit "変更する" %>
+            <%= f.submit "変更", class: "btn btn-success btn-sm" %>
             <% end %>
           </td>
           <td><%= cart_item.subtotal %></td>
-          <td><%= link_to "削除する" , cart_item_path(cart_item.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+          <td><%= link_to "削除する" , cart_item_path(cart_item.id), class: "btn btn-danger btn-sm", method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
         </tr>
       </tbody>
       <% end %>
@@ -39,9 +39,9 @@
   <div>
     <%= link_to "買い物を続ける", items_path, class: "btn btn-primary btn-sm" %>
   </div>
-  <table border="1">
+  <table class="table table-bordered table-sm">
     <tr>
-      <th>合計金額</th><td><%= @total.round.to_s(:delimited) %></td>
+      <th class="table-secondary">合計金額</th><td><%= @total.round.to_s(:delimited) %></td>
     </tr>
   </table>
   <div>
