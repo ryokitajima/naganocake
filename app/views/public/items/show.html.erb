@@ -1,6 +1,9 @@
-<div>
-  <%= image_tag @item.get_image %>
-</div>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-md-3">
+  <%= image_tag @item.get_image(200,200) %>
+  </div>
+  <div class="col-md-6">
 <table>
   <tr>
     <td><%= @item.name %></td>
@@ -12,14 +15,20 @@
     <td>¥<%= @item.add_tax_price.to_s(:dalimited) %><h10>(税込)</h10></td>
   </tr>
   <tr>
-    <th>数量を選択してください</th>
     <% if customer_signed_in? %>
+    <th>数量を選択してください</th>
     <%= form_with model: @cart_item, url: cart_items_path , method: :post do |f| %>
-    <td><%= f.hidden_field :item_id, :value => @item.id %></td>
-    <td><%= f.select :amount , *[1..10] %></td>
-    <td><%= f.submit 'カートに入れる', class: "btn-sm btn-primary" %></td>
+    <td>
+    <%= f.hidden_field :item_id, :value => @item.id %>
+    <%= f.select :amount , *[1..10] %>
+    <%= f.submit 'カートに入れる', class: "btn-sm btn-primary" %>
+    </td>
     <% end %>
     <% end %>
   </tr>
 </table>
+</div>
+</div>
+</div>
+
 

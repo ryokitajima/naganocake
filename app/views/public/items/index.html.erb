@@ -1,17 +1,17 @@
 <div class="container">
   <div class="row justify-content-md-center">
-    <div class="col-xs-1"></div>
-    <div class="col-xs-9">
-      <h4 class="p-3 mb-2 bg-light text-dark">商品一覧</h4>
+    <div class="col-md-3">
+      <h4 style="display:inline">商品一覧</h4>
+      <h7>(全<%= @items.count %>件)</h7>
   
+  <div class="row">
   <% @items.each do |item| %>
-  <div class="row" style="width: 18rem;">
-  <table class="col">
+  <table class="col-md-6">
   <thead>
     <tr>
     <td>
       <%= link_to item_path(item.id) do %>
-      <%= image_tag item.image %>
+      <%= image_tag item.get_image(200, 200) %>
       <% end %>
     </td>
   </tr>

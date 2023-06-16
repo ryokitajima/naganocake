@@ -1,6 +1,13 @@
-<h4>ショッピングカート</h4>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div>
+      <h4 class="bg-light text-dark">ショッピングカート</h4>
+    </div>
+    
+<div>
+  <%= button_to "カートを空にする", destroy_all_cart_items_path, method: :delete %>
+</div>
 
-<%= button_to "カートを空にする", destroy_all_cart_items_path, method: :delete %>
 <div>
   <table border="1">
     <thead>
@@ -14,7 +21,7 @@
       <% @cart_items.each do |cart_item| %>
       <tbody>
         <tr>
-          <td><%= image_tag cart_item.item.image %><%= cart_item.item.name %></td>
+          <td><%= image_tag cart_item.item.get_image(200,200) %><%= cart_item.item.name %></td>
           <td><%= cart_item.item.add_tax_price.to_s(:dalimited) %></td>
           <td>
             <%= form_with model: cart_item, url: cart_item_path(cart_item.id), method: :patch do |f| %>
@@ -29,15 +36,19 @@
       <% end %>
     </thead>
   </table>
+  <div>
+    <%= link_to "買い物を続ける", items_path, class: "btn btn-primary btn-sm" %>
+  </div>
   <table border="1">
     <tr>
       <th>合計金額</th><td><%= @total.round.to_s(:delimited) %></td>
     </tr>
   </table>
-  <%= link_to "買い物を続ける", items_path %>
+  <div>
+    <%= link_to "情報入力に進む", new_order_path, class: "btn btn-success btn-sm" %>
+  </div>
 </div>
-<div>
-  <%= link_to "情報入力に進む", new_order_path %>
+</div>
 </div>
 
 
