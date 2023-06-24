@@ -3,6 +3,7 @@
 class Public::SessionsController < Devise::SessionsController
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :customer_state, only: [:create]
+  
 
   
   protected
