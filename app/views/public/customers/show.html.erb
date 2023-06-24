@@ -1,6 +1,10 @@
-<h4>マイページ</h4>
-<h5><strong>登録情報</strong></h5>
-<%= link_to "編集する", edit_customer_path(current_customer), class: "btn btn-outline-secondary btn-block" %>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-9">
+      <h4 class="p-3 mb-2 bg-light text-dark">マイページ</h4>
+      <h5><strong>登録情報</strong>  <%= link_to "編集する", edit_customer_path(current_customer), class: "btn btn-success btn-sm" %></h5>
+
 
 <table border="1" width="700">
   <tr>
@@ -23,5 +27,8 @@
   </tr>
 </table>
 
-<h5><strong>注文履歴</strong></h5>
-<%= link_to "一覧を見る", orders_path, class: "btn btn-outline-secondary btn-block" %>
+<h5><strong>注文履歴</strong>  <%= link_to "一覧を見る", orders_path, class: "btn btn-primary btn-sm" %></h5>
+
+</div>
+</div>
+</div

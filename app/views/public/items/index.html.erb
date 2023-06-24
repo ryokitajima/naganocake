@@ -3,28 +3,18 @@
     <div class="col-10">
       <h4 style="display:inline">商品一覧</h4>
       <h7>(全<%= @items.count %>件)</h7>
-  
+
   <div class="row">
   <% @items.each do |item| %>
-  <table class="col-3">
-  <thead>
-    <tr>
-    <td>
-      <%= link_to item_path(item.id) do %>
-      <%= image_tag item.get_image(200, 200) %>
+  <div class="card" style="width: 14rem;">
+   <%= link_to item_path(item.id) do %>
+      <%= image_tag item.get_image(200, 200), class: "card-img-top img-fluid" %>
       <% end %>
-    </td>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-     <td><%= link_to item.name, item_path(item.id) %></td>
-  </tr>
-  <tr>
-    <td>¥<%= item.price %></td>
-  </tr>
-  </tbody>
-</table>
+  <div class="card-body">
+    <h9 class="card-title"><%= link_to item.name, item_path(item.id) %></h9>
+    <p class="card-text">¥<%= item.price %></p>
+  </div>
+</div>
 <%= paginate @items %>
   <% end %>
 </div>

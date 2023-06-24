@@ -1,12 +1,16 @@
-<h4>注文履歴詳細</h4>
-<div>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-xs-9">
+      <h4 class="bg-light text-dark">注文履歴詳細</h4>
+<div class="row">
+<div class="col">
 <h6><strong>注文情報</strong></h6>
-<table border="1">
+<table class="table table-bordered">
     <tr>
-      <th>注文日</th><td><%= @order.created_at.strftime('%Y/%m/%d') %></td>
+      <th class="table-secondary">注文日</th><td><%= @order.created_at.strftime('%Y/%m/%d') %></td>
     </tr>
     <tr>
-      <th>配送先</th>
+      <th class="table-secondary">配送先</th>
       <td>
         〒<%= @order.postal_code %></br>
         <%= @order.address %></br>
@@ -14,29 +18,30 @@
       </td>
     </tr>
     <tr>
-      <th>支払方法</th><td><%= @order.payment_method_i18n %></td>
+      <th class="table-secondary">支払方法</th><td><%= @order.payment_method_i18n %></td>
     </tr>
   </thead>
 </table>
 </div>
-<div>
+<div class="col align-self-start">
   <h6><strong>請求情報</strong></h6>
-  <table border="1">
+  <table class="table table-bordered">
     <tr>
-      <th>商品合計</th><td><%= (@order.payment.to_i - @order.postage.to_i).to_s(:delimited)  %></td>
+      <th class="table-secondary">商品合計</th><td><%= (@order.payment.to_i - @order.postage.to_i).to_s(:delimited)  %></td>
     </tr>
     <tr>
-      <th>配送料</th><td><%= @order.postage %></td>
+      <th class="table-secondary">配送料</th><td><%= @order.postage %></td>
     </tr>
     <tr>
-      <th>ご請求額</th><td><%= @order.payment %></td>
+      <th class="table-secondary">ご請求額</th><td><%= @order.payment %></td>
     </tr>
   </table>
 </div>
+</div>
 <div>
   <h6><strong>注文内容</strong></h6>
-  <table border="1">
-    <thead>
+  <table class="table table-bordered">
+    <thead class="table-secondary">
       <tr>
         <th>商品</th>
         <th>単価（税込）</th>
@@ -56,4 +61,6 @@
     <% end %>
   </table>
 </div>
-
+</div>
+</div>
+</div>

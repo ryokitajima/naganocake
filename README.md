@@ -5,6 +5,7 @@
 ##顧客側の商品詳細ページでカートに入れるボタンをクリックする際、一度リロードしないとクリックできない
 ##商品一覧ページの商品を４つずつ横並びに表示させたい
 
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

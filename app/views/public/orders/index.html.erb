@@ -1,8 +1,11 @@
-<h4>注文履歴一覧</h4>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div>
+      <h4 class="bg-light text-dark">注文履歴一覧</h4>
 
 <div>
-  <table border="1">
-    <thead>
+  <table class="table table-bordered">
+    <thead class="table-secondary">
     <tr>
       <th>注文日</th>
       <th>配送先</th>
@@ -21,11 +24,14 @@
           <%= order_item.item.name %>
           <% end %>
           </td>
-        <td><%= order.payment %></td>
-        <td><%= link_to "表示する", order_path(order.id),class: "btn btn-outline-secondary btn-block" %></td>
+        <td><%= order.payment %>円</td>
+        <td><%= link_to "表示する", order_path(order.id),class: "btn btn-primary btn-sm" %></td>
       </tr>
     </tbody>
     <% end %>
   </table>
   <%= paginate @orders %>
+</div>
+</div>
+</div>
 </div>

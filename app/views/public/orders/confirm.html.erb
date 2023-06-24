@@ -1,8 +1,11 @@
-<h4>注文情報確認</h4>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div>
+      <h4 class="bg-light text-dark">注文情報確認</h4>
 
-<div>
-    <table border="1">
-        <thead>
+<div class= "col">
+    <table class="table table-bordered">
+        <thead class="table-secondary">
             <tr>
                 <th>商品名</th>
                 <th>単価（税込）</th>
@@ -13,7 +16,7 @@
         <% @cart_items.each do |cart_item| %>
         <tbody>
             <tr>
-                <td><%= image_tag cart_item.item.image %><%= cart_item.item.name %> </td>
+                <td><%= image_tag cart_item.item.get_image(200,200) %><%= cart_item.item.name %> </td>
                 <td><%= cart_item.item.add_tax_price.to_s(:dalimited) %></td>
                 <td><%= cart_item.amount %></td>
                 <td><%= cart_item.subtotal %></td>
@@ -23,14 +26,14 @@
     </table>
 </div>
 <%= form_with model: @order , url: orders_path do |f| %>
-<div>
-    <table border="1">
+<div class="col align-self-end">
+    <table class="table table-bordered">
         <tr>
-            <th>送料</th><td><%= @order.postage %>
+            <th class="table-secondary">送料</th><td><%= @order.postage %>
              <%= f.hidden_field :postage, :value => @order.postage %>
             </td>
-            <th>商品合計</th><td><%= @total.round.to_s(:delimited) %></td>
-            <th>請求金額</th><td><%= @order.payment %>
+            <th class="table-secondary">商品合計</th><td><%= @total.round.to_s(:delimited) %></td>
+            <th class="table-secondary">請求金額</th><td><%= @order.payment %>
              <%= f.hidden_field :payment, :value => @order.payment %>
             </td>
         </tr>
@@ -42,6 +45,8 @@
             <th>支払方法</th><td><%= @order.payment_method_i18n %>
             <%= f.hidden_field :payment_method, :value => @order.payment_method %>
             </td>
+        </tr>
+        <tr>
             <th>お届け先</th>
             <td>〒<%= @order.postal_code %>
             <%= f.hidden_field :postal_code, :value => @order.postal_code %>
@@ -55,7 +60,10 @@
 </div>
 
 
-<div>
-    <%= f.submit "注文を確定する" %>
+<div class="text-center">
+    <%= f.submit "注文を確定する", class: "btn btn-success btn-sm" %>
 </div>
 <% end %>
+</div>
+</div>
+</div>

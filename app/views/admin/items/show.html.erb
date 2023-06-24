@@ -5,7 +5,7 @@
       <h4 class="p-3 mb-2 bg-light text-dark">商品詳細</h4>
 
 <div class= "row">
- <%= image_tag @item.get_image %>
+ <%= image_tag @item.get_image(200,200) %>
  <table class="col">
     <tr>
         <th>商品名</th><td><%= @item.name %></td>     
