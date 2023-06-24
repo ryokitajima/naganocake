@@ -3,9 +3,9 @@
     <div>
       <h4 class="bg-light text-dark">ショッピングカート</h4>
     </div>
-    
+
 <div>
-  <%= button_to "カートを空にする", destroy_all_cart_items_path, method: :delete %>
+  <%= button_to "カートを空にする", destroy_all_cart_items_path, method: :delete, "data-confirm" => "本当に削除しますか？" %>
 </div>
 
 <div>
@@ -36,16 +36,23 @@
       <% end %>
     </thead>
   </table>
-  <div>
+  <div class="row">
+    <div class="col">
     <%= link_to "買い物を続ける", items_path, class: "btn btn-primary btn-sm" %>
-  </div>
+    </div>
+    <div class="col">
   <table class="table table-bordered table-sm">
     <tr>
-      <th class="table-secondary">合計金額</th><td><%= @total.round.to_s(:delimited) %></td>
+      <th class="table-secondary">合計金額</th><td><%= @total.round.to_s(:delimited) %>円</td>
     </tr>
   </table>
-  <div>
+  </div>
+  </div>
+  <div class="text-center">
+    <% if current_customer.cart_items.any? %>
     <%= link_to "情報入力に進む", new_order_path, class: "btn btn-success btn-sm" %>
+    <% end %>
+  </div>
   </div>
 </div>
 </div>

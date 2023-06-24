@@ -4,9 +4,10 @@
     <div class="col-xs-9">
       <h4 class="bg-light text-dark">注文情報入力</h4>
 <div>
+   <%= form_with model: @order, url: confirm_orders_path do |f| %>
   <table>
     <tr><strong>支払方法</strong></tr>
-    <%= form_with model: @order, url: confirm_orders_path do |f| %>
+   
       <tr>
         <td>
           <%= f.radio_button :payment_method, Order.payment_methods.key(0) %>
