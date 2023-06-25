@@ -2,19 +2,19 @@ class Public::OrdersController < ApplicationController
   def new
     @order = Order.new
     @customer = current_customer
-    
+
   end
-  
+
   def index
     @orders = current_customer.orders.page(params[:page]).per(10)
-    
+
   end
-  
+
   def show
     @order = Order.find(params[:id])
     @order_items = @order.order_items.all
   end
-  
+
   def create
     @order = Order.new(order_params)
     @order.customer_id = current_customer.id
@@ -43,8 +43,14 @@ class Public::OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.customer_id = current_customer.id
     @order.postage = 800
-    @order.payment_method = params[:order][:payment_method]
     @order.payment = @cart_items.inject(0) { |sum, item| sum + item.subtotal.to_i } + @order.postage.to_i
+
+    if params[:order][:address_number] == "1"
+      @order.postal_code = current_customer.postal_code
+      @order.address = current_customer.address
+      @order.name = current_customer.last_name+""+current_customer.first_name
+    elsif params[:order][:address_number] == "2"
+    end
   end
 
   def complete

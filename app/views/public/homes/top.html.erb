@@ -10,3 +10,22 @@
     </div>
   </div>
 </div>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-10">
+      <h4 style="display:inline">新着商品</h4>
+
+  <div class="row">
+  <% @random.each do |item| %>
+  <div class="card" style="width: 14rem;">
+   <%= link_to item_path(item.id) do %>
+      <%= image_tag item.get_image(200, 200), class: "card-img-top img-fluid" %>
+      <% end %>
+  <div class="card-body">
+    <h9 class="card-title"><%= link_to item.name, item_path(item.id) %></h9>
+    <p class="card-text">¥<%= item.price %></p>
+  </div>
+</div>
+  <% end %>
+<%= link_to "全ての商品を見る >", items_path %>
+</div>

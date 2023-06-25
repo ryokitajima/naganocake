@@ -24,13 +24,21 @@
         <td><strong>お届け先</strong></td>
       </tr>
         <tr>
-          <td>郵便番号(ハイフンなし)</td><td><%= f.text_field :postal_code %></td>
+          <td> 
+          <%= f.radio_button :address_number, 1 %>
+          <%= f.label :address , "ご自身の住所"%>
+          <br>
+          〒<%= @customer.postal_code %><%= @customer.address %></br>
+          <%= @customer.last_name %><%= @customer.first_name %>
+          </td>
         </tr>
         <tr>
-          <td>住所</td><td><%= f.text_field :address %></td>
-        </tr>
-        <tr>
-          <td>宛名</td><td><%= f.text_field :name %></td>
+          <td>
+          <%= f.radio_button :address_number, 2 %>
+          <%= f.label :address , "新しいお届け先"%>
+          <br><%= f.label :postal_code, "郵便番号(ハイフンなし)" %><%= f.text_field :postal_code %></br>
+          <br><%= f.label :address, "住所" %><%= f.text_field :address %></br>
+          <br><%= f.label :name, "宛名" %><%= f.text_field :name %></br>
         </tr>
         </table>
         
