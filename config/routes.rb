@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   sessions: 'public/sessions'
   }
 
-  # 管理用
+  # 管理者用
   # URL /admin/sign_in ...
   devise_for :admin, skip: [:registrations, :passwords] , controllers: {
   sessions: "admin/sessions"
@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get "/about" => "public/homes#about"
   get "/admin" => "admin/homes#top"
 
+　#ユーザー用（URLはそのまま使用のため、scopeを使用）
   scope module: :public do
   get "/customers/unsubscribe" => "customers#unsubscribe"
   patch "/customers/withdrawal" => "customers#withdrawal"
@@ -35,6 +36,8 @@ Rails.application.routes.draw do
   end
   end
 
+　#管理者用（URLに/adminを追加するため、namespaceを使用）
+　#resourcesへonlyを追加する！無くても問題なく動くが、不要なルーティングやurlがあるとエラーの原因になる！
   namespace :admin do
   resources :items
   resources :customers
